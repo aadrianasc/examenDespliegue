@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Say Hello</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffcccc; /* rosa */
+    font-family: Arial, sans-serif;
+  }
+
+  #hello-message {
+    color: #ff007f; /* fucsia */
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff007f; /* fucsia */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #cc0052; /* fucsia más oscuro */
+  }
+</style>
+</head>
+<body>
+
+<div id="hello-message"></div>
+<button onclick="sayHello()">Decir Hola</button>
+
+<script>
+  function sayHello() {
+    var name = prompt("Por favor, ingresa tu nombre:");
+    var helloMessage = document.getElementById("hello-message");
+    if (name === null || name.trim() === "") {
+      helloMessage.textContent = "Por favor, ingresa un nombre válido.";
+    } else {
+      helloMessage.textContent = "¡Hola, " + name + "!";
+    }
+  }
+</script>
+
+</body>
+</html>
